@@ -1,8 +1,4 @@
-on:
-  push:
-    branches:
-      - main
-
+on: [push]
 permissions:
   contents: write
 jobs:
@@ -21,3 +17,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: www
+          branch: main
