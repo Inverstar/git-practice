@@ -22,3 +22,4 @@ jobs:
         with:
           folder: www
           branch: main
+          clean: false
