@@ -6,11 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish Logseq graph
     steps:
-      - uses: actions/checkout@v4
-      - uses: logseq/publish-spa@main
-        with: 
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build graph's SPA
+        uses: logseq/publish-spa@main
+        with:
+          graph-directory: publish/logseq-graph
           theme-mode: dark
           accent-color: cyan
+
       - name: Add a nojekyll file # to make sure asset paths are correctly identified
         run: touch $GITHUB_WORKSPACE/www/.nojekyll
       - name: Deploy 🚀
