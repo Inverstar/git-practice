@@ -11,6 +11,8 @@ jobs:
 
       - name: Build graph's SPA
         uses: logseq/publish-spa@main
+        with:
+          theme-mode: dark
 
       - name: Add a nojekyll file # to make sure asset paths are correctly identified
         run: touch $GITHUB_WORKSPACE/www/.nojekyll
